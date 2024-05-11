@@ -22,7 +22,7 @@ const { page, uniqueTags } = Astro.props;
 
 const meta = {
 	title: "Posts",
-	description: "Ready my collection of posts and the things that interest me",
+	description: "Read my collection of posts and the things that interest me",
 };
 
 const paginationProps = {
@@ -82,7 +82,7 @@ const paginationProps = {
 						{uniqueTags.map((tag) => (
 							<li>
 								<a
-									class="flex items-center justify-center rounded-lg bg-accent p-1"
+									class="flex items-center justify-center rounded-lg bg-accent px-2 py-1 text-sm"
 									href={`/tags/${tag}/`}
 									aria-label={`View all posts with the tag: ${tag}`}
 								>

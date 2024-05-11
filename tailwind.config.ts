@@ -27,6 +27,13 @@ export default {
 				"accent-2": "hsl(var(--theme-accent-2) / <alpha-value>)",
 				quote: "hsl(var(--theme-quote) / <alpha-value>)",
 			},
+			// drop-shadow-glow (https://stackoverflow.com/a/75903849)
+			// dropShadow: {
+			// 	glow: [
+			// 		"0 0px 20px hsl(var(--theme-accent-2) / <alpha-value>)",
+			// 		"0 0px 65px hsl(var(--theme-accent-2) / <alpha-value>)"
+			// 	]
+			// },
 			fontFamily: {
 				// Add any custom fonts here
 				sans: [...fontFamily.sans],

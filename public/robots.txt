@@ -1,4 +1,4 @@
 User-agent: *
-Allow: /
+Disallow: /
 
-Sitemap: https://astro-cactus.chriswilliams.dev/sitemap-index.xml
+Sitemap: https://nhtsai.github.io/sitemap-index.xml

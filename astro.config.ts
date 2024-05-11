@@ -13,13 +13,16 @@ export default defineConfig({
 	// ! Please remember to replace the following site property with your own domain
 	site: "https://nhtsai.github.io",
 	markdown: {
+		// Remark Rehype footnote options
 		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
 		rehypePlugins: [
 			[rehypeExternalLinks, { target: "_blank", rel: ["nofollow, noopener, noreferrer"] }],
 		],
 		remarkRehype: { footnoteLabelProperties: { className: [""] } },
+		
+		// Shiki Syntax highlighting theme (https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes)
 		shikiConfig: {
-			theme: "dracula",
+			theme: "one-dark-pro",
 			wrap: true,
 		},
 	},

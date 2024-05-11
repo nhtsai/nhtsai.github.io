@@ -1,3 +1,5 @@
+// define all object types
+
 export type SiteConfig = {
 	author: string;
 	title: string;

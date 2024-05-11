@@ -1,13 +1,27 @@
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 
-/** Note: this function filters out draft posts based on the environment */
+/**
+ * Get all posts from content collection.
+ * 
+ * Note: this function filters out draft posts based on the environment
+ * 
+ * @returns list of posts
+ */
 export async function getAllPosts() {
 	return await getCollection("post", ({ data }) => {
 		return import.meta.env.PROD ? data.draft !== true : true;
 	});
 }
 
+/**
+ * Sort markdown posts by date.
+ * 
+ * Uses publish date if updated date not available.
+ * 
+ * @param posts - list of posts
+ * @returns sorted list of posts
+ */
 export function sortMDByDate(posts: Array<CollectionEntry<"post">>) {
 	return posts.sort((a, b) => {
 		const aDate = new Date(a.data.updatedDate ?? a.data.publishDate).valueOf();
@@ -16,17 +30,38 @@ export function sortMDByDate(posts: Array<CollectionEntry<"post">>) {
 	});
 }
 
-/** Note: This function doesn't filter draft posts, pass it the result of getAllPosts above to do so. */
+/**
+ * Get all tags from a list of posts.
+ * 
+ * Note: This function doesn't filter draft posts, pass it the result of getAllPosts above to do so.
+ * 
+ * @param posts - list of posts
+ * @returns list of tags
+ */
 export function getAllTags(posts: Array<CollectionEntry<"post">>) {
 	return posts.flatMap((post) => [...post.data.tags]);
 }
 
-/** Note: This function doesn't filter draft posts, pass it the result of getAllPosts above to do so. */
+/**
+ * Get all unique tags from a list of posts.
+ * 
+ * Note: This function doesn't filter draft posts, pass it the result of getAllPosts above to do so.
+ * 
+ * @param posts - list of posts
+ * @returns list of unique tags
+ */
 export function getUniqueTags(posts: Array<CollectionEntry<"post">>) {
 	return [...new Set(getAllTags(posts))];
 }
 
-/** Note: This function doesn't filter draft posts, pass it the result of getAllPosts above to do so. */
+/**
+ * Get a sorted list of unique tags and counts
+ * 
+ * Note: This function doesn't filter draft posts, pass it the result of getAllPosts above to do so.
+ * 
+ * @param posts - list of posts
+ * @returns sorted list of unique tags and counts
+ */
 export function getUniqueTagsWithCount(
 	posts: Array<CollectionEntry<"post">>,
 ): Array<[string, number]> {

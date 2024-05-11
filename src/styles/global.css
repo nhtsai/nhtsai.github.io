@@ -6,22 +6,22 @@
 	:root {
 		color-scheme: light;
 		/* https://tailwindcss.com/docs/customizing-colors#using-css-variables */
-		--theme-bg: 0deg 0% 98%;
-		--theme-link: 172deg 18% 41%;
-		--theme-text: 203deg 11% 15%;
-		--theme-accent: 351deg 66% 48%;
-		--theme-accent-2: 0deg 0% 7%;
-		--theme-quote: 351deg 66% 48%;
+		--theme-bg: 0deg 0% 98%;		/* white	#fafafa */
+		--theme-link: 172deg 18% 41%;	/* teal 	#567b76 */
+		--theme-text: 203deg 11% 15%; 	/* dark 	#22272a */
+		--theme-accent: 351deg 66% 48%;	/* red 		#cb2a42 */
+		--theme-accent-2: 0deg 0% 7%;	/* black 	#121212 */
+		--theme-quote: 351deg 66% 48%;	/* red 		#cb2a42 */
 	}
 
 	:root.dark {
 		color-scheme: dark;
-		--theme-bg: 210deg 6% 12%;
-		--theme-link: 330deg 49% 67%;
-		--theme-text: 220deg 3% 79%;
-		--theme-accent: 159deg 64% 45%;
-		--theme-accent-2: 0deg 0% 93%;
-		--theme-quote: 102deg 100% 86%;
+		--theme-bg: 0deg 0% 7.06%; 		/* dark background */
+		--theme-link: 330deg 49% 67%; 	/* bubblegum pink #d482ab */
+		--theme-text: 220deg 3% 79%; 	/* light gray */
+		--theme-accent: 159deg 64% 45%; /* mint green */
+		--theme-accent-2: 0deg 0% 93%; 	/* off-white */
+		--theme-quote: 102deg 100% 86%; /* pastel light green */
 	}
 
 	html {
@@ -29,6 +29,6 @@
 	}
 
 	html body {
-		@apply mx-auto flex min-h-screen max-w-3xl flex-col bg-bgColor px-8 pt-16 font-mono text-sm font-normal text-textColor antialiased;
+		@apply mx-auto flex min-h-screen max-w-3xl flex-col bg-bgColor px-8 pt-16 font-mono text-base font-normal text-textColor antialiased;
 	}
 }
